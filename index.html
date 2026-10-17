@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arewa Data Plus - Mobile VTU App</title>
+    <title>Arewa Data Plus - Professional VTU</title>
     <style>
         :root {
             --primary: #0E6251;
             --accent: #F39C12;
-            --bg: #F4F6F7;
+            --bg: #F8FAFC;
             --dark: #1E293B;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, sans-serif; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 
-        body { background-color: #0d1117; display: flex; justify-content: center; min-height: 100vh; }
+        body { background-color: #0f172a; display: flex; justify-content: center; min-height: 100vh; }
 
         .app-container {
             width: 100%;
@@ -24,223 +24,206 @@
             display: flex;
             flex-direction: column;
             position: relative;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            box-shadow: 0 0 25px rgba(0,0,0,0.6);
+            padding-bottom: 70px;
         }
 
-        /* Top Header */
-        .app-header {
-            background: linear-gradient(135deg, var(--primary), #0A4337);
-            color: #fff;
-            padding: 25px 20px;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
+        /* Top User Profile Header */
+        .user-header {
+            background: #ffffff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #E2E8F0;
         }
 
-        .brand-row { display: flex; justify-content: space-between; align-items: center; }
-        .brand-title { font-size: 20px; font-weight: bold; }
-        .badge { background: var(--accent); color: #fff; font-size: 10px; padding: 3px 8px; border-radius: 10px; font-weight: bold; }
+        .user-info { display: flex; align-items: center; gap: 10px; }
+        .avatar { width: 40px; height: 40px; background: var(--primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 16px; }
+        .username { font-size: 15px; font-weight: bold; color: var(--dark); }
+        .user-status { font-size: 12px; color: #27AE60; font-weight: 600; }
+        .support-icon { font-size: 20px; background: #F1F5F9; padding: 8px; border-radius: 50%; cursor: pointer; }
 
-        /* Wallet Card */
-        .wallet-card {
-            background: #1A252F;
-            color: #fff;
-            margin: -20px 20px 15px 20px;
+        /* Orange Balance Card */
+        .balance-card {
+            background: linear-gradient(135deg, #FF7A00, #FF5500);
+            color: #ffffff;
+            margin: 15px 20px;
             padding: 20px;
             border-radius: 16px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 20px rgba(255, 122, 0, 0.3);
+            position: relative;
         }
 
-        .bal-val { font-size: 28px; font-weight: bold; color: var(--accent); margin: 5px 0; }
-        .topup-btn { background: var(--primary); color: #fff; border: none; padding: 6px 12px; border-radius: 8px; font-size: 12px; font-weight: bold; cursor: pointer; float: right; }
+        .bal-header { display: flex; justify-content: space-between; align-items: center; font-size: 13px; opacity: 0.9; }
+        .bal-amount { font-size: 26px; font-weight: bold; margin: 8px 0; letter-spacing: 0.5px; }
+        .invite-box { background: rgba(255,255,255,0.2); padding: 8px 12px; border-radius: 8px; font-size: 11px; margin-top: 10px; display: flex; justify-content: space-between; align-items: center; }
 
-        /* Services Grid */
+        /* Virtual Account Scroll Cards */
+        .accounts-slider {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding: 0 20px 10px 20px;
+            scrollbar-width: none;
+        }
+        .accounts-slider::-webkit-scrollbar { display: none; }
+
+        .account-pill {
+            min-width: 220px;
+            background: #ffffff;
+            border: 1px solid #E2E8F0;
+            padding: 12px 15px;
+            border-radius: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .acc-bank { font-size: 11px; color: #64748B; font-weight: bold; display: flex; justify-content: space-between; }
+        .acc-number { font-size: 15px; font-weight: bold; color: var(--dark); margin: 4px 0; }
+
+        /* Quick Features Row */
+        .features-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 10px 20px;
+        }
+        .feature-box {
+            background: #ffffff;
+            border: 1px solid #E2E8F0;
+            padding: 12px;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* Services Section */
         .section-title { font-weight: bold; font-size: 14px; margin: 15px 20px 10px 20px; color: var(--dark); }
-        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 0 20px; }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            padding: 0 20px;
+        }
 
         .service-card {
-            background: #fff;
-            border: 1px solid #E5E7E9;
-            padding: 15px 10px;
+            background: #ffffff;
+            border: 1px solid #E2E8F0;
+            padding: 16px 10px;
             border-radius: 14px;
             text-align: center;
             cursor: pointer;
             transition: 0.2s;
         }
-
-        .service-card:active { transform: scale(0.95); background: #E8F8F5; }
-        .service-icon { font-size: 26px; margin-bottom: 5px; }
+        .service-card:active { transform: scale(0.96); background: #F1F5F9; }
+        .service-icon { font-size: 24px; margin-bottom: 6px; }
         .service-name { font-size: 12px; font-weight: 600; color: var(--dark); }
 
-        .btn-main {
-            background: var(--primary);
-            color: #fff;
-            border: none;
-            margin: 20px;
-            padding: 15px;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        /* Modal Popup Screen */
-        .modal-overlay {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.6);
-            display: none;
-            justify-content: center;
-            align-items: flex-end;
-            z-index: 1000;
-        }
-
-        .modal-content {
-            background: #fff;
-            width: 100%;
-            max-width: 450px;
-            padding: 25px 20px;
-            border-top-left-radius: 25px;
-            border-top-right-radius: 25px;
-            animation: slideUp 0.3s ease-out;
-        }
-
-        @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
-
-        .modal-title { font-size: 18px; font-weight: bold; margin-bottom: 15px; color: var(--primary); }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { font-size: 12px; font-weight: bold; display: block; margin-bottom: 5px; }
-        .form-control { width: 100%; padding: 12px; border: 1px solid #BDC3C7; border-radius: 8px; font-size: 14px; outline: none; }
-
-        /* Bottom Nav */
+        /* Bottom Navigation Bar */
         .bottom-nav {
-            margin-top: auto;
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: #ffffff;
+            border-top: 1px solid #E2E8F0;
             display: flex;
             justify-content: space-around;
-            padding: 12px 0;
-            background: #fff;
-            border-top: 1px solid #E5E7E9;
-            font-size: 12px;
+            padding: 10px 0;
+            font-size: 11px;
             font-weight: 600;
+            color: #64748B;
         }
-        .nav-item { text-align: center; color: #7F8C8D; cursor: pointer; }
+        .nav-item { text-align: center; cursor: pointer; }
         .nav-item.active { color: var(--primary); }
     </style>
 </head>
 <body>
 
 <div class="app-container">
-    <!-- Header -->
-    <div class="app-header">
-        <div class="brand-row">
-            <div class="brand-title">📱 Arewa Data Plus</div>
-            <span class="badge">PRO APP</span>
+    <!-- User Profile Header -->
+    <div class="user-header">
+        <div class="user-info">
+            <div class="avatar">ADP</div>
+            <div>
+                <div class="username">Arewa Data Plus</div>
+                <div class="user-status">● Smart Agent</div>
+            </div>
         </div>
-        <div style="font-size: 11px; opacity: 0.8; margin-top: 5px;">Mafi Sauri & Amana wajen Data/Airtime</div>
+        <div class="support-icon" onclick="alert('Bude layin taimako na Arewa Data Plus')">🎧</div>
     </div>
 
-    <!-- Wallet Balance -->
-    <div class="wallet-card">
-        <button class="topup-btn" onclick="alert('Lambar Account dinka na Moniepoint: 8123456789')">+ Add Money</button>
-        <div style="font-size: 11px; color: #BDC3C7;">AVAILABLE BALANCE</div>
-        <div class="bal-val">₦15,400.00</div>
-        <div style="font-size: 11px; color: #2ECC71;">● Virtual Account Active</div>
+    <!-- Balance Card -->
+    <div class="balance-card">
+        <div class="bal-header">
+            <span>Available Balance</span>
+            <span style="cursor: pointer;" onclick="alert('Balance hidden')">👁️ Show</span>
+        </div>
+        <div class="bal-amount">₦15,400.00</div>
+        <div class="invite-box">
+            <span>Invite Friends & Earn Rewards</span>
+            <span>➔</span>
+        </div>
     </div>
 
-    <!-- Quick Services -->
-    <div class="section-title">Ayyukan Mu (Services)</div>
+    <!-- Virtual Accounts Slider (Moniepoint / Palmpay) -->
+    <div class="accounts-slider">
+        <div class="account-pill">
+            <div class="acc-bank"><span>ArewaPlus - Att</span> <span style="color: #27AE60;">VERIFIED</span></div>
+            <div class="acc-number">6655901476</div>
+            <div style="font-size: 10px; font-weight: bold; color: #8E44AD;">Palmpay</div>
+        </div>
+        <div class="account-pill">
+            <div class="acc-bank"><span>ArewaPlus - Att</span> <span style="color: #27AE60;">VERIFIED</span></div>
+            <div class="acc-number">8123456789</div>
+            <div style="font-size: 10px; font-weight: bold; color: #2980B9;">Moniepoint</div>
+        </div>
+    </div>
+
+    <!-- Mini Features Row -->
+    <div class="features-row">
+        <div class="feature-box">📦 Spend & Save</div>
+        <div class="feature-box">👥 Borrowers</div>
+        <div class="feature-box">📊 Profit</div>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="section-title">Services</div>
     <div class="services-grid">
-        <div class="service-card" onclick="openBuyModal('Data')">
+        <div class="service-card" onclick="alert('Buy Data Menu')">
             <div class="service-icon">📶</div>
             <div class="service-name">Buy Data</div>
         </div>
-        <div class="service-card" onclick="openBuyModal('Airtime')">
+        <div class="service-card" onclick="alert('Airtime Menu')">
             <div class="service-icon">📞</div>
             <div class="service-name">Airtime</div>
         </div>
-        <div class="service-card" onclick="alert('Za a buɗe Cable TV!')">
+        <div class="service-card" onclick="alert('Cable TV Menu')">
             <div class="service-icon">📺</div>
             <div class="service-name">Cable TV</div>
         </div>
-        <div class="service-card" onclick="alert('Za a buɗe Electricity!')">
+        <div class="service-card" onclick="alert('Electricity Menu')">
             <div class="service-icon">💡</div>
             <div class="service-name">Electricity</div>
         </div>
-        <div class="service-card" onclick="openBuyModal('Bulk Data')">
+        <div class="service-card" onclick="alert('Bulk Data Menu')">
             <div class="service-icon">📦</div>
             <div class="service-name">Bulk Data</div>
         </div>
-        <div class="service-card" onclick="alert('Shafin Transactions History')">
+        <div class="service-card" onclick="alert('History Menu')">
             <div class="service-icon">📜</div>
             <div class="service-name">History</div>
         </div>
     </div>
 
-    <button class="btn-main" onclick="openBuyModal('Data')">Siyi Data Yanzu</button>
-
-    <!-- Navigation -->
+    <!-- Bottom Nav -->
     <div class="bottom-nav">
         <div class="nav-item active">🏠<br>Home</div>
-        <div class="nav-item" onclick="alert('History Screen')">📊<br>Orders</div>
-        <div class="nav-item" onclick="alert('Wallet Topup')">💳<br>Wallet</div>
-        <div class="nav-item" onclick="alert('Profile Settings')">👤<br>Profile</div>
+        <div class="nav-item">📊<br>Summary</div>
+        <div class="nav-item">📜<br>Orders</div>
+        <div class="nav-item">👤<br>Profile</div>
     </div>
 </div>
-
-<!-- Modal Form Popup -->
-<div class="modal-overlay" id="buyModal">
-    <div class="modal-content">
-        <div class="modal-title" id="modalHeader">Sayan Data</div>
-        
-        <div class="form-group">
-            <label>Zaɓi Network:</label>
-            <select class="form-control" id="networkSelect">
-                <option>MTN SME / Direct</option>
-                <option>Airtel CG</option>
-                <option>Glo Data</option>
-                <option>9mobile Gifting</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label>Zaɓi Tsarin Data (Plan):</label>
-            <select class="form-control">
-                <option>1GB - ₦280 (30 Days)</option>
-                <option>2GB - ₦560 (30 Days)</option>
-                <option>5GB - ₦1,400 (30 Days)</option>
-                <option>10GB - ₦2,800 (30 Days)</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label>Lambar Waya (Phone Number):</label>
-            <input type="tel" class="form-control" placeholder="08012345678">
-        </div>
-
-        <div class="form-group">
-            <label>PIN din Sirri (4 Digits):</label>
-            <input type="password" class="form-control" placeholder="****" maxlength="4">
-        </div>
-
-        <button class="btn-main" style="width: 100%; margin: 10px 0 0 0;" onclick="processTransaction()">Tura Yanzu (Submit)</button>
-        <button style="width: 100%; background: none; border: none; padding: 10px; color: #7F8C8D; font-weight: bold; cursor: pointer;" onclick="closeBuyModal()">Soke (Cancel)</button>
-    </div>
-</div>
-
-<script>
-    function openBuyModal(type) {
-        document.getElementById('modalHeader').innerText = 'Sayan ' + type;
-        document.getElementById('buyModal').style.display = 'flex';
-    }
-
-    function closeBuyModal() {
-        document.getElementById('buyModal').style.display = 'none';
-    }
-
-    function processTransaction() {
-        alert('An tura aikin ku cikin nasara! Za a tura muku Data da kuke bukata.');
-        closeBuyModal();
-    }
-</script>
 
 </body>
 </html>
