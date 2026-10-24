@@ -3,221 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arewa Data Plus</title>
+    <title>VTU Dashboard Sample</title>
     <style>
-        :root {
-            --primary: #0E6251;
-            --primary-dark: #0A4337;
-            --accent-gold: #F39C12;
-            --bg: #F8FAFC;
-            --text-dark: #1E293B;
-            --card-white: #FFFFFF;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
         }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-
-        body { background-color: #0f172a; display: flex; justify-content: center; min-height: 100vh; }
-
-        .app-container {
-            width: 100%;
-            max-width: 450px;
-            background: var(--bg);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            box-shadow: 0 0 25px rgba(0,0,0,0.5);
-            padding-bottom: 75px;
+        .wallet-card {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            max-width: 400px;
+            margin: auto;
         }
-
-        /* Top Header */
-        .user-header {
-            background: var(--card-white);
-            padding: 16px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #E2E8F0;
+        .wallet-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            color: #dcdcdc;
         }
-
-        .user-profile { display: flex; align-items: center; gap: 12px; }
-        .avatar { width: 42px; height: 42px; background: var(--primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 16px; }
-        .user-name { font-size: 15px; font-weight: 700; color: var(--text-dark); }
-        .user-badge { font-size: 11px; color: #27AE60; font-weight: 600; }
-        .support-btn { font-size: 20px; background: #F1F5F9; border: none; padding: 8px 10px; border-radius: 50%; cursor: pointer; }
-
-        /* Wallet Card */
-        .balance-card {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: #ffffff;
-            margin: 15px 20px 10px 20px;
-            padding: 22px;
-            border-radius: 18px;
-            box-shadow: 0 10px 20px rgba(14, 98, 81, 0.25);
+        .balance {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
         }
-
-        .bal-title { font-size: 12px; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.5px; }
-        .bal-row { display: flex; justify-content: space-between; align-items: center; margin-top: 6px; }
-        .bal-amount { font-size: 28px; font-weight: bold; color: var(--accent-gold); }
-        .eye-toggle { background: rgba(255,255,255,0.15); border: none; color: #fff; padding: 5px 10px; border-radius: 20px; font-size: 11px; cursor: pointer; }
-
-        /* Virtual Account Section (Dynamic Placeholder) */
-        .account-section {
-            margin: 10px 20px 15px 20px;
-        }
-        
-        .account-card {
-            background: var(--card-white);
-            border: 1px solid #E2E8F0;
-            padding: 15px;
-            border-radius: 14px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-        }
-
-        .acc-info { display: flex; flex-direction: column; gap: 3px; }
-        .acc-label { font-size: 11px; color: #64748B; font-weight: 600; }
-        .acc-number { font-size: 16px; font-weight: bold; color: var(--text-dark); letter-spacing: 0.5px; }
-        .acc-bank { font-size: 11px; color: var(--primary); font-weight: 700; }
-        .copy-btn { background: #E8F8F5; color: var(--primary); border: none; padding: 8px 12px; border-radius: 8px; font-size: 11px; font-weight: bold; cursor: pointer; }
-
-        /* Services Grid */
-        .section-header { font-weight: bold; font-size: 14px; margin: 10px 20px 10px 20px; color: var(--text-dark); }
-        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 0 20px; }
-
-        .service-box {
-            background: var(--card-white);
-            border: 1px solid #E2E8F0;
-            padding: 16px 10px;
-            border-radius: 14px;
-            text-align: center;
+        .btn {
+            background-color: #ff9800;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
             cursor: pointer;
-            transition: all 0.2s ease;
         }
-
-        .service-box:active { transform: scale(0.96); background: #F1F5F9; }
-        .service-icon { font-size: 26px; margin-bottom: 6px; }
-        .service-title { font-size: 12px; font-weight: 600; color: var(--text-dark); }
-
-        /* Bottom Navigation */
-        .bottom-nav {
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            background: var(--card-white);
-            border-top: 1px solid #E2E8F0;
-            display: flex;
-            justify-content: space-around;
-            padding: 10px 0;
-            font-size: 11px;
-            font-weight: 600;
-            color: #64748B;
-        }
-
-        .nav-link { text-align: center; cursor: pointer; text-decoration: none; color: inherit; }
-        .nav-link.active { color: var(--primary); }
     </style>
 </head>
 <body>
 
-<div class="app-container">
-    <!-- User Profile Header -->
-    <div class="user-header">
-        <div class="user-profile">
-            <div class="avatar" id="userAvatar">ADP</div>
-            <div>
-                <div class="user-name" id="userName">Barka da zuwa</div>
-                <div class="user-badge">● Arewa Data Plus User</div>
-            </div>
-        </div>
-        <button class="support-btn" onclick="alert('Layin Taimako: Support Team')">🎧</button>
+    <div class="wallet-card">
+        <h3>Maraba, Hashimu</h3>
+        <div class="balance">₦5,450.00</div>
+        <button class="btn">+ Ƙara Kuɗi (Fund Wallet)</button>
     </div>
-
-    <!-- Wallet Balance -->
-    <div class="balance-card">
-        <div class="bal-title">Asusunku (Wallet Balance)</div>
-        <div class="bal-row">
-            <div class="bal-amount" id="walletBalance">₦0.00</div>
-            <button class="eye-toggle" onclick="toggleBalance()">👁️ Boye/Nuna</button>
-        </div>
-    </div>
-
-    <!-- Dynamic Virtual Account (Dedicated Slot for Real API Integration) -->
-    <div class="account-section">
-        <div class="account-card" id="accountBox">
-            <div class="acc-info">
-                <span class="acc-label">Ainihin Bank Account dinka:</span>
-                <span class="acc-number" id="accountNumber">Ana lodi...</span>
-                <span class="acc-bank" id="bankName">Automated Bank Deposit</span>
-            </div>
-            <button class="copy-btn" onclick="copyAccount()">Copy</button>
-        </div>
-    </div>
-
-    <!-- Main Services -->
-    <div class="section-header">Ayyukan Mu (Services)</div>
-    <div class="services-grid">
-        <div class="service-box" onclick="alert('Sayan Data')">
-            <div class="service-icon">📶</div>
-            <div class="service-title">Buy Data</div>
-        </div>
-        <div class="service-box" onclick="alert('Sayan Airtime')">
-            <div class="service-icon">📞</div>
-            <div class="service-title">Airtime</div>
-        </div>
-        <div class="service-box" onclick="alert('Cable TV')">
-            <div class="service-icon">📺</div>
-            <div class="service-title">Cable TV</div>
-        </div>
-        <div class="service-box" onclick="alert('Electricity')">
-            <div class="service-icon">💡</div>
-            <div class="service-title">Electricity</div>
-        </div>
-        <div class="service-box" onclick="alert('Bulk Data')">
-            <div class="service-icon">📦</div>
-            <div class="service-title">Bulk Data</div>
-        </div>
-        <div class="service-box" onclick="alert('Tarihin Ayyuka')">
-            <div class="service-icon">📜</div>
-            <div class="service-title">History</div>
-        </div>
-    </div>
-
-    <!-- Bottom Navigation -->
-    <div class="bottom-nav">
-        <div class="nav-link active">🏠<br>Home</div>
-        <div class="nav-link" onclick="alert('Transactions')">📊<br>Orders</div>
-        <div class="nav-link" onclick="alert('Wallet Topup')">💳<br>Wallet</div>
-        <div class="nav-link" onclick="alert('Profile Settings')">👤<br>Profile</div>
-    </div>
-</div>
-
-<script>
-    // System script logic for loading dynamic backend data
-    let balanceVisible = true;
-
-    function toggleBalance() {
-        const balElement = document.getElementById('walletBalance');
-        if (balanceVisible) {
-            balElement.innerText = '****';
-            balanceVisible = false;
-        } else {
-            balElement.innerText = '₦0.00';
-            balanceVisible = true;
-        }
-    }
-
-    function copyAccount() {
-        const accNum = document.getElementById('accountNumber').innerText;
-        if(accNum && accNum !== 'Ana lodi...') {
-            navigator.clipboard.writeText(accNum);
-            alert('An yi copy din lambar account: ' + accNum);
-        } else {
-            alert('Babu lambar account a yanzu.');
-        }
-    }
-</script>
 
 </body>
 </html>
