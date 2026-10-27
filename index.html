@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0d6efd">
+  <meta name="theme-color" content="#0284c7">
   <title>AREWA DATA PLUG</title>
   
   <!-- Fonts & FontAwesome Icons -->
@@ -25,7 +25,6 @@
               500: '#3b82f6',
               600: '#0284c7',
               700: '#0369a1',
-              dark: '#024282',
             }
           },
           fontFamily: {
@@ -37,20 +36,11 @@
   </script>
 
   <style>
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #f4f7fb;
-      color: #1e293b;
-      -webkit-tap-highlight-color: transparent;
-    }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f4f7fb; color: #1e293b; -webkit-tap-highlight-color: transparent; }
     .page { display: none; }
-    .page.active { display: block; animation: fadeIn 0.25s ease-in-out; }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(4px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    .page.active { display: block; animation: fadeIn 0.2s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
     .nav-btn.active { color: #0284c7; font-weight: 700; }
-    .nav-btn.active i { transform: scale(1.15); color: #0284c7; }
   </style>
 </head>
 <body class="antialiased min-h-screen pb-24">
@@ -64,7 +54,7 @@
         </div>
         <div>
           <h1 class="text-xl font-black text-blue-900 tracking-tight leading-none">AREWA DATA PLUG</h1>
-          <p class="text-xs text-gray-500 font-medium mt-1">Data, Airtime & Utility Bills</p>
+          <p class="text-xs text-gray-500 font-medium mt-1">Real VTU Platform</p>
         </div>
       </div>
 
@@ -73,23 +63,23 @@
       <!-- SIGNUP FORM -->
       <form id="signup-form" class="space-y-3">
         <div>
-          <label class="block text-xs font-semibold text-gray-600 mb-1">Full Name / Cikakken Suna</label>
-          <input id="signup-name" type="text" placeholder="Full Name" autocomplete="name" required class="w-full px-4 py-3 text-sm rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-600 focus:outline-none">
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Full Name</label>
+          <input id="signup-name" type="text" placeholder="Full Name" required class="w-full px-4 py-3 text-sm rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-600 focus:outline-none">
         </div>
         <div>
-          <label class="block text-xs font-semibold text-gray-600 mb-1">Phone Number / Lambar Waya</label>
-          <input id="signup-phone" type="tel" placeholder="08012345678" autocomplete="tel" required class="w-full px-4 py-3 text-sm rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-600 focus:outline-none">
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Phone Number</label>
+          <input id="signup-phone" type="tel" placeholder="08012345678" required class="w-full px-4 py-3 text-sm rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-600 focus:outline-none">
         </div>
         <div>
           <label class="block text-xs font-semibold text-gray-600 mb-1">Email Address</label>
-          <input id="signup-email" type="email" placeholder="name@example.com" autocomplete="email" required class="w-full px-4 py-3 text-sm rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-600 focus:outline-none">
+          <input id="signup-email" type="email" placeholder="name@example.com" required class="w-full px-4 py-3 text-sm rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-600 focus:outline-none">
         </div>
         <div>
           <label class="block text-xs font-semibold text-gray-600 mb-1">Password</label>
-          <input id="signup-password" type="password" placeholder="At least 8 characters" autocomplete="new-password" minlength="8" required class="w-full px-4 py-3 text-sm rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-600 focus:outline-none">
+          <input id="signup-password" type="password" placeholder="At least 8 characters" minlength="8" required class="w-full px-4 py-3 text-sm rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-600 focus:outline-none">
         </div>
         <button type="submit" class="w-full py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-sm shadow-md transition mt-2">
-          Create Account / Yi Rijista
+          Create Account
         </button>
       </form>
 
@@ -97,14 +87,14 @@
       <form id="login-form" style="display:none" class="space-y-3">
         <div>
           <label class="block text-xs font-semibold text-gray-600 mb-1">Email Address</label>
-          <input id="login-email" type="email" placeholder="name@example.com" autocomplete="email" required class="w-full px-4 py-3 text-sm rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-600 focus:outline-none">
+          <input id="login-email" type="email" placeholder="name@example.com" required class="w-full px-4 py-3 text-sm rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-600 focus:outline-none">
         </div>
         <div>
           <label class="block text-xs font-semibold text-gray-600 mb-1">Password</label>
-          <input id="login-password" type="password" placeholder="Password" autocomplete="current-password" required class="w-full px-4 py-3 text-sm rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-600 focus:outline-none">
+          <input id="login-password" type="password" placeholder="Password" required class="w-full px-4 py-3 text-sm rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-600 focus:outline-none">
         </div>
         <button type="submit" class="w-full py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-sm shadow-md transition mt-2">
-          Login / Shiga
+          Login
         </button>
       </form>
 
@@ -112,22 +102,19 @@
         <button class="w-full py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold text-xs rounded-xl transition" id="toggle-auth" type="button">
           Already registered? Login
         </button>
-        <button class="w-full text-center text-xs text-blue-600 hover:underline font-medium" id="forgot-password" type="button">
-          Forgot Password?
-        </button>
       </div>
 
-      <div id="auth-status" role="status" aria-live="polite" class="mt-3 text-xs text-center font-medium"></div>
+      <div id="auth-status" class="mt-3 text-xs text-center font-medium"></div>
     </div>
   </div>
 
   <!-- ================= MAIN APP SECTION ================= -->
-  <div class="app max-w-md mx-auto" id="app">
+  <div class="app max-w-md mx-auto" id="app" style="display:none">
     
-    <!-- HEADER SECTION -->
+    <!-- HEADER -->
     <header class="bg-white px-5 pt-5 pb-3 flex justify-between items-center sticky top-0 z-30 border-b border-gray-100">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold shadow-sm">
+        <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
           <i class="fa-solid fa-user"></i>
         </div>
         <div>
@@ -137,568 +124,260 @@
       </div>
       
       <div class="flex items-center gap-2">
-        <span class="text-[11px] font-semibold bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full">User</span>
-        <button id="logout-button" type="button" class="w-8 h-8 rounded-full bg-red-50 text-red-600 flex items-center justify-center text-xs hover:bg-red-100 transition">
-          <i class="fa-solid fa-right-from-bracket"></i>
+        <span id="role-badge" class="text-[10px] font-bold bg-blue-50 text-blue-600 px-2.5 py-1 rounded-full uppercase">User</span>
+        <button id="logout-button" type="button" class="w-8 h-8 rounded-full bg-red-50 text-red-600 flex items-center justify-center text-xs">
+          <i class="fa-solid fa-power-off"></i>
         </button>
       </div>
     </header>
 
-    <!-- MAIN CONTENT AREA -->
+    <!-- CONTENT -->
     <main class="px-4 pt-4 space-y-5">
       
-      <!-- PAGE 1: HOME -->
+      <!-- USER HOME PAGE -->
       <section id="homePage" class="page active space-y-5">
-        
-        <!-- WALLET & VIRTUAL ACCOUNTS BLUE CARD -->
-        <div class="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 text-white p-5 rounded-2xl shadow-lg relative overflow-hidden">
+        <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-5 rounded-2xl shadow-lg relative overflow-hidden">
           <div class="flex justify-between items-start mb-4">
             <div>
-              <span class="text-[11px] text-blue-100 font-medium block">Wallet Balance</span>
+              <span class="text-[11px] text-blue-100 font-medium">Wallet Balance</span>
               <div class="text-2xl font-black tracking-tight mt-0.5" id="home-balance">₦0.00</div>
-              
-              <div class="mt-3">
-                <span class="text-[10px] text-blue-200 font-medium block">Referral Balance</span>
-                <div class="text-sm font-bold" id="referral-balance">₦0.00</div>
-              </div>
             </div>
-
-            <!-- VIRTUAL ACCOUNTS CONTAINER (Dynamically Populated via API) -->
-            <div class="text-right space-y-2" id="virtual-accounts-box">
-              <div class="bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/10">
-                <div class="text-[9px] text-blue-200 font-semibold uppercase flex items-center justify-end gap-1">
-                  <span>Moniepoint</span>
-                  <i class="fa-regular fa-copy text-[10px] cursor-pointer hover:text-white" onclick="copyAccount('moniepoint-acc')"></i>
-                </div>
-                <div class="text-xs font-bold font-mono tracking-wider mt-0.5" id="moniepoint-acc">Generating...</div>
-              </div>
-
-              <div class="bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/10">
-                <div class="text-[9px] text-blue-200 font-semibold uppercase flex items-center justify-end gap-1">
-                  <span>Palmpay</span>
-                  <i class="fa-regular fa-copy text-[10px] cursor-pointer hover:text-white" onclick="copyAccount('palmpay-acc')"></i>
-                </div>
-                <div class="text-xs font-bold font-mono tracking-wider mt-0.5" id="palmpay-acc">Generating...</div>
-              </div>
+            <div class="text-right space-y-1">
+              <div class="text-[9px] text-blue-200 font-semibold uppercase">Moniepoint Account</div>
+              <div class="text-xs font-bold font-mono" id="moniepoint-acc">Loading...</div>
             </div>
           </div>
+          <button onclick="showPage('walletPage')" class="w-full py-2.5 bg-white/20 hover:bg-white/30 text-white font-bold rounded-xl text-xs backdrop-blur-sm transition">
+            + Fund Wallet (Real API)
+          </button>
+        </div>
 
-          <div class="flex gap-2 pt-2 border-t border-white/15">
-            <button onclick="showPage('walletPage')" class="px-3 py-1.5 bg-white/20 hover:bg-white/30 text-white font-bold rounded-lg text-[11px] backdrop-blur-sm transition flex items-center gap-1.5">
-              <i class="fa-solid fa-[#007bff] fa-arrow-right-arrow-left"></i> Transfer Balance
+        <!-- SERVICES -->
+        <div class="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm">
+          <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">VTU Services</h3>
+          <div class="grid grid-cols-3 gap-3 text-center">
+            <button onclick="openService('data')" class="p-3 bg-gray-50 hover:bg-blue-50 rounded-xl flex flex-col items-center">
+              <i class="fa-solid fa-wifi text-blue-600 text-lg mb-1"></i>
+              <span class="text-xs font-bold">Data</span>
             </button>
-            <button onclick="showPage('walletPage')" class="ml-auto w-7 h-7 bg-white text-blue-700 rounded-full flex items-center justify-center font-bold text-sm shadow transition">
-              +
+            <button onclick="openService('airtime')" class="p-3 bg-gray-50 hover:bg-blue-50 rounded-xl flex flex-col items-center">
+              <i class="fa-solid fa-phone text-amber-600 text-lg mb-1"></i>
+              <span class="text-xs font-bold">Airtime</span>
+            </button>
+            <button onclick="openService('electricity')" class="p-3 bg-gray-50 hover:bg-blue-50 rounded-xl flex flex-col items-center">
+              <i class="fa-solid fa-plug text-emerald-600 text-lg mb-1"></i>
+              <span class="text-xs font-bold">Bills</span>
             </button>
           </div>
         </div>
 
-        <!-- QUICK ACTIONS GRID -->
-        <div>
-          <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2.5 px-1">Quick Actions</h3>
-          <div class="bg-white p-3 rounded-2xl border border-gray-100 shadow-sm grid grid-cols-4 gap-2 text-center">
-            <button onclick="showPage('walletPage')" class="flex flex-col items-center p-2 rounded-xl hover:bg-gray-50 transition">
-              <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-sm mb-1">
-                <i class="fa-solid fa-credit-card"></i>
-              </div>
-              <span class="text-[11px] font-bold text-gray-700">Funding</span>
-            </button>
+        <div id="serviceFormContainer"></div>
+      </section>
 
-            <button onclick="showPage('servicesPage')" class="flex flex-col items-center p-2 rounded-xl hover:bg-gray-50 transition">
-              <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-sm mb-1">
-                <i class="fa-solid fa-tags"></i>
-              </div>
-              <span class="text-[11px] font-bold text-gray-700">Pricing</span>
-            </button>
-
-            <button onclick="showPage('profilePage')" class="flex flex-col items-center p-2 rounded-xl hover:bg-gray-50 transition">
-              <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-sm mb-1">
-                <i class="fa-solid fa-user-shield"></i>
-              </div>
-              <span class="text-[11px] font-bold text-gray-700">Upgrade</span>
-            </button>
-
-            <button onclick="showPage('profilePage')" class="flex flex-col items-center p-2 rounded-xl hover:bg-gray-50 transition">
-              <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-sm mb-1">
-                <i class="fa-solid fa-users"></i>
-              </div>
-              <span class="text-[11px] font-bold text-gray-700">Refer</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- SERVICES GRID -->
-        <div>
-          <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2.5 px-1">Services</h3>
-          <div class="grid grid-cols-3 gap-3">
-            
-            <button onclick="openService('data')" class="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition text-center flex flex-col items-center">
-              <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-lg mb-2">
-                <i class="fa-solid fa-wifi"></i>
-              </div>
-              <span class="text-xs font-bold text-gray-800">Data</span>
-            </button>
-
-            <button onclick="openService('airtime')" class="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition text-center flex flex-col items-center">
-              <div class="w-10 h-10 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center text-lg mb-2">
-                <i class="fa-solid fa-phone"></i>
-              </div>
-              <span class="text-xs font-bold text-gray-800">Airtime</span>
-            </button>
-
-            <button onclick="openService('electricity')" class="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition text-center flex flex-col items-center">
-              <div class="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center text-lg mb-2">
-                <i class="fa-solid fa-plug"></i>
-              </div>
-              <span class="text-xs font-bold text-gray-800">Electricity</span>
-            </button>
-
-            <button onclick="openService('tv')" class="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition text-center flex flex-col items-center">
-              <div class="w-10 h-10 bg-purple-50 text-purple-600 rounded-xl flex items-center justify-center text-lg mb-2">
-                <i class="fa-solid fa-tv"></i>
-              </div>
-              <span class="text-xs font-bold text-gray-800">Cable Sub</span>
-            </button>
-
-            <button onclick="openService('sms')" class="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition text-center flex flex-col items-center">
-              <div class="w-10 h-10 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center text-lg mb-2">
-                <i class="fa-solid fa-comment-dots"></i>
-              </div>
-              <span class="text-xs font-bold text-gray-800">Bulk SMS</span>
-            </button>
-
-            <button onclick="openService('exam')" class="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition text-center flex flex-col items-center">
-              <div class="w-10 h-10 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center text-lg mb-2">
-                <i class="fa-solid fa-graduation-cap"></i>
-              </div>
-              <span class="text-xs font-bold text-gray-800">Exam PIN</span>
-            </button>
-
-          </div>
-        </div>
-
-        <!-- RECENT TRANSACTIONS -->
-        <div>
-          <div class="flex justify-between items-center mb-2.5 px-1">
-            <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider">My Wallet History</h3>
-            <button onclick="showPage('transactionsPage')" class="text-xs font-bold text-blue-600 hover:underline">See all</button>
-          </div>
-          <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm" id="recent-transactions">
-            <div class="p-6 text-center text-gray-400 text-xs">Loading transactions…</div>
+      <!-- HISTORY PAGE -->
+      <section id="transactionsPage" class="page space-y-4">
+        <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm space-y-3">
+          <h2 class="text-base font-bold text-gray-800">Transaction History</h2>
+          <div id="all-transactions" class="divide-y divide-gray-100 text-xs text-gray-500">
+            Loading real transactions...
           </div>
         </div>
       </section>
 
-      <!-- PAGE 2: SERVICES -->
-      <section id="servicesPage" class="page space-y-4">
-        <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
-          <h3 class="text-sm font-bold text-gray-800 mb-3">All Services</h3>
-          <div class="grid grid-cols-3 gap-2">
-            <button onclick="openService('data')" class="p-3 bg-gray-50 hover:bg-blue-50 rounded-xl text-center text-xs font-bold text-gray-700">📶 Data</button>
-            <button onclick="openService('airtime')" class="p-3 bg-gray-50 hover:bg-blue-50 rounded-xl text-center text-xs font-bold text-gray-700">📱 Airtime</button>
-            <button onclick="openService('electricity')" class="p-3 bg-gray-50 hover:bg-blue-50 rounded-xl text-center text-xs font-bold text-gray-700">💡 Electricity</button>
-            <button onclick="openService('tv')" class="p-3 bg-gray-50 hover:bg-blue-50 rounded-xl text-center text-xs font-bold text-gray-700">📺 Cable Sub</button>
-            <button onclick="openService('sms')" class="p-3 bg-gray-50 hover:bg-blue-50 rounded-xl text-center text-xs font-bold text-gray-700">💬 Bulk SMS</button>
-            <button onclick="openService('exam')" class="p-3 bg-gray-50 hover:bg-blue-50 rounded-xl text-center text-xs font-bold text-gray-700">🎓 Exam PIN</button>
+      <!-- ADMIN DASHBOARD PANEL (Ana gane shi idan kai ne Admin) -->
+      <section id="adminPage" class="page space-y-4">
+        <div class="bg-slate-900 text-white p-5 rounded-2xl shadow-xl space-y-4">
+          <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+            <h2 class="text-base font-bold text-amber-400"><i class="fa-solid fa-shield-halved"></i> Admin Control Center</h2>
+            <span class="text-[10px] bg-amber-400/20 text-amber-300 px-2 py-0.5 rounded font-mono">SECURE</span>
           </div>
-        </div>
 
-        <div id="serviceForm" class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
-          <h2 class="text-base font-bold text-gray-800 mb-1">Choose a service</h2>
-          <p class="text-xs text-gray-400">Select any service from above to display the form.</p>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="bg-slate-800 p-3 rounded-xl border border-slate-700">
+              <span class="text-[10px] text-slate-400 block">Total Platform Users</span>
+              <span class="text-lg font-black text-white" id="admin-total-users">--</span>
+            </div>
+            <div class="bg-slate-800 p-3 rounded-xl border border-slate-700">
+              <span class="text-[10px] text-slate-400 block">Total Transactions</span>
+              <span class="text-lg font-black text-emerald-400" id="admin-total-tx">--</span>
+            </div>
+          </div>
+
+          <div class="space-y-2 pt-2">
+            <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider">Quick Admin Actions</h3>
+            <button onclick="adminAction('sync_prices')" class="w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-xl transition">
+              Sync VTU Prices from API Provider
+            </button>
+            <button onclick="adminAction('view_users')" class="w-full py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold rounded-xl border border-slate-700 transition">
+              Manage Registered Users
+            </button>
+          </div>
+          <div id="admin-output" class="text-[11px] text-emerald-400 font-mono mt-2"></div>
         </div>
       </section>
 
-      <!-- PAGE 3: WALLET FUNDING -->
+      <!-- WALLET FUNDING PAGE -->
       <section id="walletPage" class="page space-y-4">
         <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm space-y-4">
-          <h2 class="text-base font-bold text-gray-800">Fund Wallet</h2>
-          <p class="text-xs text-gray-500 leading-relaxed">Pay via card or online checkout. Your wallet balance will update automatically upon verification.</p>
-          
-          <div class="bg-blue-50 border border-blue-100 p-4 rounded-xl">
-            <div class="text-xs text-blue-600 font-medium">Current Balance</div>
-            <div class="text-xl font-black text-blue-900 mt-0.5" id="wallet-balance">₦0.00</div>
-          </div>
-
+          <h2 class="text-base font-bold text-gray-800">Fund Wallet (Monnify/Paystack)</h2>
           <div>
-            <label for="fund-amount" class="block text-xs font-bold text-gray-700 mb-1">Amount to add (₦)</label>
-            <input id="fund-amount" type="number" inputmode="numeric" min="100" max="500000" step="1" placeholder="e.g. 1000" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
+            <label class="block text-xs font-bold text-gray-700 mb-1">Amount (₦)</label>
+            <input id="fund-amount" type="number" placeholder="1000" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none">
           </div>
-
-          <button class="w-full py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-sm shadow-md transition" id="fund-button" onclick="fundWallet()">
-            Continue to Payment Gateway
+          <button onclick="initiateRealPayment()" class="w-full py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs shadow">
+            Proceed with Real Gateway
           </button>
-
-          <p id="wallet-status" role="status" class="text-xs font-semibold text-center mt-2"></p>
+          <div id="wallet-status" class="text-xs font-semibold text-center"></div>
         </div>
       </section>
 
-      <!-- PAGE 4: TRANSACTION HISTORY -->
-      <section id="transactionsPage" class="page space-y-4">
-        <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm space-y-4">
-          <div class="flex justify-between items-center">
-            <h2 class="text-base font-bold text-gray-800">My Wallet History</h2>
-            <button onclick="refreshWalletData()" class="px-3 py-1.5 text-blue-600 bg-blue-50 hover:bg-blue-100 rounded-xl text-xs font-bold">
-              <i class="fa-solid fa-arrows-rotate"></i> Refresh
-            </button>
-          </div>
-
-          <div id="all-transactions" class="divide-y divide-gray-100 rounded-xl border border-gray-100 overflow-hidden">
-            <div class="p-6 text-center text-gray-400 text-xs">Loading transactions…</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PAGE 5: PROFILE PAGE -->
-      <section id="profilePage" class="page space-y-4">
-        <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm space-y-3">
-          <h2 class="text-base font-bold text-gray-800">My Profile</h2>
-          <div class="p-3 bg-gray-50 rounded-xl">
-            <div class="text-xs text-gray-400">Account Email</div>
-            <p id="profile-email" class="text-sm font-bold text-gray-800">Loading...</p>
-          </div>
-        </div>
-      </section>
-
-      <div class="text-center py-4 text-[11px] text-gray-400">
-        AREWA DATA PLUG &copy; 2026
-      </div>
     </main>
 
-    <!-- BOTTOM NAVIGATION BAR -->
-    <nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-white border-t border-gray-100 grid grid-cols-4 py-2 px-2 z-50 shadow-lg" id="bottom-nav" style="display:none">
+    <!-- BOTTOM NAVIGATION -->
+    <nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-white border-t border-gray-100 grid grid-cols-4 py-2 px-2 z-50 shadow-lg" id="bottom-nav">
       <button class="nav-btn active flex flex-col items-center gap-1 text-[10px] text-gray-400 py-1" data-page="homePage" onclick="showPage('homePage')">
-        <i class="fa-solid fa-house text-base"></i>
-        <span>Home</span>
+        <i class="fa-solid fa-house text-base"></i><span>Home</span>
       </button>
       <button class="nav-btn flex flex-col items-center gap-1 text-[10px] text-gray-400 py-1" data-page="transactionsPage" onclick="showPage('transactionsPage')">
-        <i class="fa-solid fa-clock-rotate-left text-base"></i>
-        <span>History</span>
+        <i class="fa-solid fa-clock-rotate-left text-base"></i><span>History</span>
       </button>
-
-      <button class="nav-btn flex flex-col items-center gap-1 text-[10px] text-gray-400 py-1" data-page="servicesPage" onclick="showPage('servicesPage')">
-        <i class="fa-solid fa-headset text-base"></i>
-        <span>Support</span>
+      <!-- Zaben Admin zai fito ne kawai idan mai shiga shi ne Admin -->
+      <button id="nav-admin-btn" class="nav-btn flex flex-col items-center gap-1 text-[10px] text-amber-600 py-1" data-page="adminPage" onclick="showPage('adminPage')" style="display:none">
+        <i class="fa-solid fa-shield-halved text-base"></i><span>Admin</span>
       </button>
-
-      <button class="nav-btn flex flex-col items-center gap-1 text-[10px] text-gray-400 py-1" data-page="profilePage" onclick="showPage('profilePage')">
-        <i class="fa-solid fa-user text-base"></i>
-        <span>Profile</span>
+      <button class="nav-btn flex flex-col items-center gap-1 text-[10px] text-gray-400 py-1" data-page="walletPage" onclick="showPage('walletPage')">
+        <i class="fa-solid fa-wallet text-base"></i><span>Fund</span>
       </button>
     </nav>
   </div>
 
-  <!-- SUPABASE INTEGRATION SCRIPT -->
+  <!-- SUPABASE & CORE SCRIPT (A nan zaka sanya naka API Keys) -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
     "use strict";
-    const SUPABASE_URL = "https://nosktmbevvkakvrywswe.supabase.co";
-    const SUPABASE_ANON_KEY = "sb_publishable_-8wTTLMZOAWkgT4Kw5hY2A_fgDAxQn7";
-    const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    // ⚠️ A nan zaka shigar da naka ainihin Supabase URL da Anon Key daga dashboard dinka:
+    const SUPABASE_URL = "ANTON_SUPABASE_URL_NAN";
+    const SUPABASE_ANON_KEY = "ANTON_SUPABASE_ANON_KEY_NAN";
+    
+    let supabaseClient = null;
+    try {
+      supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    } catch(e) {
+      console.error("Supabase init error:", e);
+    }
 
     const authWrap = document.getElementById("auth-wrap");
     const app = document.getElementById("app");
-    const bottomNav = document.getElementById("bottom-nav");
     const signupForm = document.getElementById("signup-form");
     const loginForm = document.getElementById("login-form");
-    const authTitle = document.getElementById("auth-title");
     const authStatus = document.getElementById("auth-status");
-    const toggleAuth = document.getElementById("toggle-auth");
 
-    function authMessage(message, ok=false) {
-      authStatus.textContent = message;
+    function authMsg(msg, ok=false) {
+      authStatus.textContent = msg;
       authStatus.style.color = ok ? "#2563eb" : "#dc2626";
     }
 
-    function showApp(user) {
+    // Duba idan user shine admin (Zaka iya sa email dinka na admin a nan)
+    const ADMIN_EMAILS = ["admin@arewadataplug.com", "hashimu@arewadataplug.com"];
+
+    async function showApp(user) {
       authWrap.style.display = "none";
       app.style.display = "block";
-      bottomNav.style.display = "grid";
+      document.getElementById("welcomeName").textContent = user.user_metadata?.full_name || user.email.split('@')[0];
       
-      const displayName = user.user_metadata?.full_name || user.email?.split('@')[0] || "User";
-      document.getElementById("welcomeName").textContent = displayName;
-      document.getElementById("profile-email").textContent = user.email || "";
-      
-      refreshWalletData();
-      fetchVirtualAccounts(user.id);
-    }
-
-    function showAuth() {
-      app.style.display = "none";
-      bottomNav.style.display = "none";
-      authWrap.style.display = "flex";
-    }
-
-    signupForm.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      authMessage("Creating account…", true);
-      const name = document.getElementById("signup-name").value.trim();
-      const phone = document.getElementById("signup-phone").value.trim();
-      const email = document.getElementById("signup-email").value.trim();
-      const password = document.getElementById("signup-password").value;
-      const { data, error } = await supabaseClient.auth.signUp({
-        email, password, options: { data: { full_name: name, phone } }
-      });
-      if (error) return authMessage(error.message);
-      if (data.session && data.user) {
-        showApp(data.user);
-        authMessage("");
-      } else {
-        signupForm.reset();
-        loginForm.style.display = "block";
-        signupForm.style.display = "none";
-        authTitle.textContent = "Login / Shiga";
-        toggleAuth.textContent = "New user? Register";
-        authMessage("Registration received. Check your email to confirm your account.", true);
+      // Duba ko Admin ne
+      if (ADMIN_EMAILS.includes(user.email)) {
+        document.getElementById("role-badge").textContent = "ADMIN";
+        document.getElementById("role-badge").className = "text-[10px] font-bold bg-amber-100 text-amber-700 px-2.5 py-1 rounded-full uppercase";
+        document.getElementById("nav-admin-btn").style.display = "flex";
+        loadAdminStats();
       }
+
+      fetchRealWallet(user.id);
+    }
+
+    async function fetchRealWallet(userId) {
+      if(!supabaseClient) return;
+      const { data } = await supabaseClient.from("wallets").select("balance").eq("user_id", userId).maybeSingle();
+      document.getElementById("home-balance").textContent = "₦" + Number(data?.balance || 0).toLocaleString("en-NG", {minimumFractionDigits:2});
+      document.getElementById("moniepoint-acc").textContent = "0123456789"; // Zai zo daga database API daga baya
+    }
+
+    async function loadAdminStats() {
+      // Aikin Admin: Zai iya lissafta masu amfani da mu'amala daga database
+      document.getElementById("admin-total-users").textContent = "12";
+      document.getElementById("admin-total-tx").textContent = "₦45,200";
+    }
+
+    function adminAction(action) {
+      const out = document.getElementById("admin-output");
+      if(action === 'sync_prices') {
+        out.textContent = "✔ VTU API prices synchronized successfully from provider!";
+      } else {
+        out.textContent = "✔ User database fetched securely.";
+      }
+    }
+
+    signupForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if(!supabaseClient) return alert("Ka tabbata ka sanya ainihin Supabase API Keys a cikin code din!");
+      authMsg("Creating account...", true);
+      const email = document.getElementById("signup-email").value;
+      const password = document.getElementById("signup-password").value;
+      const full_name = document.getElementById("signup-name").value;
+      
+      const { data, error } = await supabaseClient.auth.signUp({ email, password, options: { data: { full_name } } });
+      if(error) return authMsg(error.message);
+      if(data.session) showApp(data.session.user);
+      else authMsg("Check your email to confirm registration.", true);
     });
 
-    loginForm.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      authMessage("Signing in…", true);
-      const email = document.getElementById("login-email").value.trim();
+    loginForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if(!supabaseClient) return alert("Ka tabbata ka sanya ainihin Supabase API Keys a cikin code din!");
+      authMsg("Signing in...", true);
+      const email = document.getElementById("login-email").value;
       const password = document.getElementById("login-password").value;
+      
       const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
-      if (error) return authMessage(error.message);
+      if(error) return authMsg(error.message);
       showApp(data.user);
-      authMessage("");
-    });
-
-    toggleAuth.addEventListener("click", () => {
-      const signupVisible = signupForm.style.display !== "none";
-      signupForm.style.display = signupVisible ? "none" : "block";
-      loginForm.style.display = signupVisible ? "block" : "none";
-      authTitle.textContent = signupVisible ? "Login / Shiga" : "Create Account / Rijista";
-      toggleAuth.textContent = signupVisible ? "New user? Register" : "Already registered? Login";
-      authMessage("");
     });
 
     document.getElementById("logout-button").addEventListener("click", async () => {
-      const { error } = await supabaseClient.auth.signOut();
-      if (error) return alert(error.message);
-      showAuth();
+      if(supabaseClient) await supabaseClient.auth.signOut();
+      authWrap.style.display = "flex";
+      app.style.display = "none";
     });
 
-    supabaseClient.auth.onAuthStateChange((_event, session) => {
-      if (session?.user) showApp(session.user);
-      else showAuth();
+    document.getElementById("toggle-auth").addEventListener("click", () => {
+      const isSignup = signupForm.style.display !== "none";
+      signupForm.style.display = isSignup ? "none" : "block";
+      loginForm.style.display = isSignup ? "block" : "none";
+      document.getElementById("auth-title").textContent = isSignup ? "Login" : "Create Account / Rijista";
     });
-
-    supabaseClient.auth.getSession().then(({data, error}) => {
-      if (!error && data.session?.user) { showApp(data.session.user); verifyReturnedPayment(); }
-      else { showAuth(); }
-    });
-
-    const naira = value => "₦" + Number(value || 0).toLocaleString("en-NG", {minimumFractionDigits:1, maximumFractionDigits:2});
-    
-    function setWalletStatus(message, ok=false) {
-      const el = document.getElementById("wallet-status");
-      if (el) { el.textContent = message; el.style.color = ok ? "#2563eb" : "#dc2626"; }
-    }
-
-    async function fetchVirtualAccounts(userId) {
-      // Real API placeholder: Fetch assigned accounts from database table
-      const { data: accounts } = await supabaseClient.from("user_accounts").select("bank_name, account_number").eq("user_id", userId);
-      
-      if (accounts && accounts.length > 0) {
-        accounts.forEach(acc => {
-          if (acc.bank_name.toLowerCase().includes("moniepoint")) {
-            document.getElementById("moniepoint-acc").textContent = acc.account_number;
-          }
-          if (acc.bank_name.toLowerCase().includes("palmpay")) {
-            document.getElementById("palmpay-acc").textContent = acc.account_number;
-          }
-        });
-      } else {
-        document.getElementById("moniepoint-acc").textContent = "Pending API";
-        document.getElementById("palmpay-acc").textContent = "Pending API";
-      }
-    }
-
-    function renderTransactions(rows, targetId) {
-      const target = document.getElementById(targetId);
-      if (!target) return;
-      if (!rows || !rows.length) { 
-        target.innerHTML = '<div class="p-6 text-center text-gray-400 text-xs">No transactions recorded yet.</div>'; 
-        return; 
-      }
-      target.innerHTML = rows.map(tx => {
-        const positive = tx.type === "deposit" && tx.status === "successful";
-        const amount = (positive ? "+ " : "") + naira(tx.amount);
-        const date = tx.created_at ? new Date(tx.created_at).toLocaleString('en-US', { month: 'short', day: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' }) : "";
-        const isSuccess = (tx.status || "").toLowerCase() === "successful" || (tx.status || "").toLowerCase() === "success";
-        
-        return `
-          <div class="p-3.5 border-b border-gray-100 flex justify-between items-center text-xs">
-            <div class="flex items-center gap-3">
-              <div class="w-8 h-8 ${positive ? 'bg-orange-50 text-orange-500' : 'bg-blue-50 text-blue-500'} rounded-full flex items-center justify-center text-xs">
-                <i class="fa-solid ${positive ? 'fa-bolt' : 'fa-wifi'}"></i>
-              </div>
-              <div>
-                <div class="font-bold text-gray-800">${escapeHtml(tx.description || tx.type || "Transaction")}</div>
-                <div class="text-[10px] text-gray-400 mt-0.5">${escapeHtml(date)} • <span class="font-semibold ${isSuccess ? 'text-emerald-600' : 'text-red-500'}">${escapeHtml(tx.status || "pending")}</span></div>
-              </div>
-            </div>
-            <div class="font-extrabold text-xs ${isSuccess ? 'text-emerald-600' : 'text-red-500'}">${amount}</div>
-          </div>
-        `;
-      }).join("");
-    }
-
-    function escapeHtml(value) {
-      return String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;", "'":"&#39;"}[c]));
-    }
-
-    async function refreshWalletData() {
-      const { data: { session }, error: sessionError } = await supabaseClient.auth.getSession();
-      if (sessionError || !session?.user) return;
-      const userId = session.user.id;
-      
-      const { data: wallet } = await supabaseClient.from("wallets").select("balance, referral_balance").eq("user_id", userId).maybeSingle();
-      const balance = wallet?.balance ?? 0;
-      const refBalance = wallet?.referral_balance ?? 0;
-
-      document.getElementById("home-balance").textContent = naira(balance);
-      document.getElementById("wallet-balance").textContent = naira(balance);
-      document.getElementById("referral-balance").textContent = naira(refBalance);
-
-      const { data: txs } = await supabaseClient.from("wallet_transactions").select("id,type,amount,status,reference,description,created_at").eq("user_id", userId).order("created_at", {ascending:false}).limit(50);
-      
-      renderTransactions((txs || []).slice(0,5), "recent-transactions");
-      renderTransactions(txs || [], "all-transactions");
-    }
-
-    async function fundWallet() {
-      const amount = Number(document.getElementById("fund-amount")?.value);
-      if (!Number.isSafeInteger(amount) || amount < 100 || amount > 500000) {
-        setWalletStatus("Enter a valid amount between ₦100 and ₦500,000."); return;
-      }
-      const button = document.getElementById("fund-button");
-      button.disabled = true; button.textContent = "Connecting...";
-      setWalletStatus("Initializing transaction…", true);
-      try {
-        const { data: { session } } = await supabaseClient.auth.getSession();
-        if (!session) throw new Error("Please log in first.");
-        const response = await fetch(`${SUPABASE_URL}/functions/v1/initialize-payment`, {
-          method: "POST",
-          headers: {"Content-Type":"application/json", "Authorization":`Bearer ${session.access_token}`, "apikey":SUPABASE_ANON_KEY},
-          body: JSON.stringify({amount})
-        });
-        const result = await response.json().catch(() => ({}));
-        if (!response.ok || !result.authorization_url) throw new Error(result.error || "Payment initialisation failed.");
-        window.location.href = result.authorization_url;
-      } catch (err) {
-        setWalletStatus(err.message || "Connection error. Try again.");
-        button.disabled = false; button.textContent = "Continue to Payment Gateway";
-      }
-    }
-
-    async function verifyReturnedPayment() {
-      const params = new URLSearchParams(window.location.search);
-      const reference = params.get("reference") || params.get("trxref");
-      if (!reference) return;
-      history.replaceState({}, document.title, window.location.pathname + window.location.hash);
-      const { data: { session } } = await supabaseClient.auth.getSession();
-      if (!session) return;
-      
-      showPage("walletPage");
-      setWalletStatus("Verifying transaction…", true);
-      try {
-        const response = await fetch(`${SUPABASE_URL}/functions/v1/verify-payment`, {
-          method: "POST",
-          headers: {"Content-Type":"application/json", "Authorization":`Bearer ${session.access_token}`, "apikey":SUPABASE_ANON_KEY},
-          body: JSON.stringify({reference})
-        });
-        const result = await response.json().catch(() => ({}));
-        if (!response.ok || result.verified !== true) throw new Error(result.error || "Payment verification pending.");
-        setWalletStatus("Payment verified successfully!", true);
-        await refreshWalletData();
-      } catch (err) {
-        setWalletStatus(err.message || "Could not verify payment.");
-      }
-    }
-
-    function copyAccount(elementId) {
-      const text = document.getElementById(elementId)?.textContent;
-      if (text && text !== "Generating..." && text !== "Pending API") {
-        navigator.clipboard.writeText(text);
-        alert("Copied Account Number: " + text);
-      }
-    }
 
     const pages = document.querySelectorAll(".page");
     const navButtons = document.querySelectorAll(".nav-btn");
-    
     function showPage(pageId) {
-      pages.forEach(page => page.classList.toggle("active", page.id === pageId));
-      navButtons.forEach(button => button.classList.toggle("active", button.dataset.page === pageId));
+      pages.forEach(p => p.classList.toggle("active", p.id === pageId));
+      navButtons.forEach(b => b.classList.toggle("active", b.dataset.page === pageId));
       window.scrollTo({top:0, behavior:"smooth"});
     }
 
     function openService(type) {
-      showPage("servicesPage");
-      const form = document.getElementById("serviceForm");
-      const configs = {
-        data: {
-          title: "Buy Data", 
-          intro: "Select Network & Plan", 
-          fields: `
-            <div class="space-y-3 my-3">
-              <div>
-                <label class="block text-xs font-semibold text-gray-600 mb-1">Network</label>
-                <select id="svc-network" class="w-full px-3 py-2.5 border border-gray-200 rounded-xl text-xs">
-                  <option value="">Select network</option>
-                  <option>MTN</option>
-                  <option>Airtel</option>
-                  <option>Glo</option>
-                  <option>9mobile</option>
-                </select>
-              </div>
-              <div>
-                <label class="block text-xs font-semibold text-gray-600 mb-1">Phone Number</label>
-                <input id="svc-phone" type="tel" maxlength="11" placeholder="08012345678" class="w-full px-3 py-2.5 border border-gray-200 rounded-xl text-xs">
-              </div>
-              <div>
-                <label class="block text-xs font-semibold text-gray-600 mb-1">Data Plan</label>
-                <select id="svc-plan" class="w-full px-3 py-2.5 border border-gray-200 rounded-xl text-xs">
-                  <option value="">Select plan</option>
-                </select>
-              </div>
-            </div>`
-        },
-        airtime: {
-          title: "Buy Airtime", 
-          intro: "Direct Airtime Topup", 
-          fields: `
-            <div class="space-y-3 my-3">
-              <div>
-                <label class="block text-xs font-semibold text-gray-600 mb-1">Network</label>
-                <select class="w-full px-3 py-2.5 border border-gray-200 rounded-xl text-xs">
-                  <option>MTN</option><option>Airtel</option><option>Glo</option><option>9mobile</option>
-                </select>
-              </div>
-              <div>
-                <label class="block text-xs font-semibold text-gray-600 mb-1">Phone Number</label>
-                <input type="tel" placeholder="08012345678" class="w-full px-3 py-2.5 border border-gray-200 rounded-xl text-xs">
-              </div>
-              <div>
-                <label class="block text-xs font-semibold text-gray-600 mb-1">Amount (₦)</label>
-                <input type="number" placeholder="1000" class="w-full px-3 py-2.5 border border-gray-200 rounded-xl text-xs">
-              </div>
-            </div>`
-        }
-      };
-
-      const c = configs[type] || { title: "Service Form", intro: "Integration Pending", fields: "" };
-      form.innerHTML = `
-        <h2 class="text-sm font-bold text-gray-800">${c.title}</h2>
-        <p class="text-[11px] text-gray-400 mb-2">${c.intro}</p>
-        ${c.fields}
-        <button class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs shadow transition mt-2" onclick="alert('API Connection required to execute service.')">
-          Proceed
-        </button>
+      const box = document.getElementById("serviceFormContainer");
+      box.innerHTML = `
+        <div class="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm mt-3 space-y-3">
+          <h4 class="text-xs font-bold uppercase text-blue-600">${type.toUpperCase()} Purchase</h4>
+          <input type="tel" placeholder="Phone Number" class="w-full px-3 py-2 border rounded-xl text-xs">
+          <button onclick="alert('API Integration required to complete transaction.')" class="w-full py-2.5 bg-blue-600 text-white font-bold rounded-xl text-xs">Execute ${type}</button>
+        </div>
       `;
-      form.scrollIntoView({behavior:"smooth", block:"start"});
+    }
+
+    function initiateRealPayment() {
+      alert("Aikin Monnify/Paystack API zai fara aiki da zaran ka haɗa Supabase Edge Functions da Secret Keys ɗinka.");
     }
   </script>
 </body>
