@@ -19,17 +19,9 @@
       theme: {
         extend: {
           colors: {
-            brand: {
-              50: '#eff6ff',
-              100: '#dbeafe',
-              500: '#3b82f6',
-              600: '#0284c7',
-              700: '#0369a1',
-            }
+            brand: { 50: '#eff6ff', 100: '#dbeafe', 500: '#3b82f6', 600: '#0284c7', 700: '#0369a1' }
           },
-          fontFamily: {
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
-          }
+          fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] }
         }
       }
     }
@@ -111,7 +103,6 @@
   <!-- ================= MAIN APP SECTION ================= -->
   <div class="app max-w-md mx-auto" id="app" style="display:none">
     
-    <!-- HEADER -->
     <header class="bg-white px-5 pt-5 pb-3 flex justify-between items-center sticky top-0 z-30 border-b border-gray-100">
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
@@ -131,10 +122,7 @@
       </div>
     </header>
 
-    <!-- CONTENT -->
     <main class="px-4 pt-4 space-y-5">
-      
-      <!-- USER HOME PAGE -->
       <section id="homePage" class="page active space-y-5">
         <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-5 rounded-2xl shadow-lg relative overflow-hidden">
           <div class="flex justify-between items-start mb-4">
@@ -148,151 +136,107 @@
             </div>
           </div>
           <button onclick="showPage('walletPage')" class="w-full py-2.5 bg-white/20 hover:bg-white/30 text-white font-bold rounded-xl text-xs backdrop-blur-sm transition">
-            + Fund Wallet (Real API)
+            + Fund Wallet
           </button>
         </div>
 
-        <!-- SERVICES -->
         <div class="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm">
           <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">VTU Services</h3>
           <div class="grid grid-cols-3 gap-3 text-center">
             <button onclick="openService('data')" class="p-3 bg-gray-50 hover:bg-blue-50 rounded-xl flex flex-col items-center">
-              <i class="fa-solid fa-wifi text-blue-600 text-lg mb-1"></i>
-              <span class="text-xs font-bold">Data</span>
+              <i class="fa-solid fa-wifi text-blue-600 text-lg mb-1"></i><span class="text-xs font-bold">Data</span>
             </button>
             <button onclick="openService('airtime')" class="p-3 bg-gray-50 hover:bg-blue-50 rounded-xl flex flex-col items-center">
-              <i class="fa-solid fa-phone text-amber-600 text-lg mb-1"></i>
-              <span class="text-xs font-bold">Airtime</span>
+              <i class="fa-solid fa-phone text-amber-600 text-lg mb-1"></i><span class="text-xs font-bold">Airtime</span>
             </button>
             <button onclick="openService('electricity')" class="p-3 bg-gray-50 hover:bg-blue-50 rounded-xl flex flex-col items-center">
-              <i class="fa-solid fa-plug text-emerald-600 text-lg mb-1"></i>
-              <span class="text-xs font-bold">Bills</span>
+              <i class="fa-solid fa-plug text-emerald-600 text-lg mb-1"></i><span class="text-xs font-bold">Bills</span>
             </button>
           </div>
         </div>
-
         <div id="serviceFormContainer"></div>
       </section>
 
-      <!-- HISTORY PAGE -->
       <section id="transactionsPage" class="page space-y-4">
         <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm space-y-3">
           <h2 class="text-base font-bold text-gray-800">Transaction History</h2>
-          <div id="all-transactions" class="divide-y divide-gray-100 text-xs text-gray-500">
-            Loading real transactions...
-          </div>
+          <div id="all-transactions" class="divide-y divide-gray-100 text-xs text-gray-500">Loading transactions...</div>
         </div>
       </section>
 
-      <!-- ADMIN DASHBOARD PANEL (Ana gane shi idan kai ne Admin) -->
       <section id="adminPage" class="page space-y-4">
         <div class="bg-slate-900 text-white p-5 rounded-2xl shadow-xl space-y-4">
           <div class="flex justify-between items-center border-b border-slate-800 pb-3">
             <h2 class="text-base font-bold text-amber-400"><i class="fa-solid fa-shield-halved"></i> Admin Control Center</h2>
             <span class="text-[10px] bg-amber-400/20 text-amber-300 px-2 py-0.5 rounded font-mono">SECURE</span>
           </div>
-
           <div class="grid grid-cols-2 gap-3">
             <div class="bg-slate-800 p-3 rounded-xl border border-slate-700">
-              <span class="text-[10px] text-slate-400 block">Total Platform Users</span>
-              <span class="text-lg font-black text-white" id="admin-total-users">--</span>
+              <span class="text-[10px] text-slate-400 block">Total Users</span><span class="text-lg font-black text-white" id="admin-total-users">1</span>
             </div>
             <div class="bg-slate-800 p-3 rounded-xl border border-slate-700">
-              <span class="text-[10px] text-slate-400 block">Total Transactions</span>
-              <span class="text-lg font-black text-emerald-400" id="admin-total-tx">--</span>
+              <span class="text-[10px] text-slate-400 block">Transactions</span><span class="text-lg font-black text-emerald-400" id="admin-total-tx">0</span>
             </div>
           </div>
-
-          <div class="space-y-2 pt-2">
-            <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider">Quick Admin Actions</h3>
-            <button onclick="adminAction('sync_prices')" class="w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-xl transition">
-              Sync VTU Prices from API Provider
-            </button>
-            <button onclick="adminAction('view_users')" class="w-full py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold rounded-xl border border-slate-700 transition">
-              Manage Registered Users
-            </button>
-          </div>
-          <div id="admin-output" class="text-[11px] text-emerald-400 font-mono mt-2"></div>
         </div>
       </section>
 
-      <!-- WALLET FUNDING PAGE -->
       <section id="walletPage" class="page space-y-4">
         <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm space-y-4">
-          <h2 class="text-base font-bold text-gray-800">Fund Wallet (Monnify/Paystack)</h2>
+          <h2 class="text-base font-bold text-gray-800">Fund Wallet</h2>
           <div>
             <label class="block text-xs font-bold text-gray-700 mb-1">Amount (₦)</label>
             <input id="fund-amount" type="number" placeholder="1000" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none">
           </div>
-          <button onclick="initiateRealPayment()" class="w-full py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs shadow">
-            Proceed with Real Gateway
-          </button>
-          <div id="wallet-status" class="text-xs font-semibold text-center"></div>
+          <button onclick="alert('Payment gateway integration required.')" class="w-full py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs shadow">Proceed</button>
         </div>
       </section>
-
     </main>
 
-    <!-- BOTTOM NAVIGATION -->
     <nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-white border-t border-gray-100 grid grid-cols-4 py-2 px-2 z-50 shadow-lg" id="bottom-nav">
-      <button class="nav-btn active flex flex-col items-center gap-1 text-[10px] text-gray-400 py-1" data-page="homePage" onclick="showPage('homePage')">
-        <i class="fa-solid fa-house text-base"></i><span>Home</span>
-      </button>
-      <button class="nav-btn flex flex-col items-center gap-1 text-[10px] text-gray-400 py-1" data-page="transactionsPage" onclick="showPage('transactionsPage')">
-        <i class="fa-solid fa-clock-rotate-left text-base"></i><span>History</span>
-      </button>
-      <!-- Zaben Admin zai fito ne kawai idan mai shiga shi ne Admin -->
-      <button id="nav-admin-btn" class="nav-btn flex flex-col items-center gap-1 text-[10px] text-amber-600 py-1" data-page="adminPage" onclick="showPage('adminPage')" style="display:none">
-        <i class="fa-solid fa-shield-halved text-base"></i><span>Admin</span>
-      </button>
-      <button class="nav-btn flex flex-col items-center gap-1 text-[10px] text-gray-400 py-1" data-page="walletPage" onclick="showPage('walletPage')">
-        <i class="fa-solid fa-wallet text-base"></i><span>Fund</span>
-      </button>
+      <button class="nav-btn active flex flex-col items-center gap-1 text-[10px] text-gray-400 py-1" data-page="homePage" onclick="showPage('homePage')"><i class="fa-solid fa-house text-base"></i><span>Home</span></button>
+      <button class="nav-btn flex flex-col items-center gap-1 text-[10px] text-gray-400 py-1" data-page="transactionsPage" onclick="showPage('transactionsPage')"><i class="fa-solid fa-clock-rotate-left text-base"></i><span>History</span></button>
+      <button id="nav-admin-btn" class="nav-btn flex flex-col items-center gap-1 text-[10px] text-amber-600 py-1" data-page="adminPage" onclick="showPage('adminPage')" style="display:none"><i class="fa-solid fa-shield-halved text-base"></i><span>Admin</span></button>
+      <button class="nav-btn flex flex-col items-center gap-1 text-[10px] text-gray-400 py-1" data-page="walletPage" onclick="showPage('walletPage')"><i class="fa-solid fa-wallet text-base"></i><span>Fund</span></button>
     </nav>
   </div>
 
-  <!-- SUPABASE & CORE SCRIPT (A nan zaka sanya naka API Keys) -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
     "use strict";
-    // ⚠️ A nan zaka shigar da naka ainihin Supabase URL da Anon Key daga dashboard dinka:
-    const SUPABASE_URL = "ANTON_SUPABASE_URL_NAN";
-    const SUPABASE_ANON_KEY = "ANTON_SUPABASE_ANON_KEY_NAN";
+    // Tabbata ka sanya ainihin Supabase URL da Anon Key ɗinka a nan:
+    const SUPABASE_URL = "https://nosktmbevvkakvrywswe.supabase.co";
+    const SUPABASE_ANON_KEY = "sb_publishable_-8wTTLMZOAWkgT4Kw5hY2A_fgDAxQn7";
     
     let supabaseClient = null;
     try {
       supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-    } catch(e) {
-      console.error("Supabase init error:", e);
-    }
+    } catch(e) { console.error(e); }
 
     const authWrap = document.getElementById("auth-wrap");
     const app = document.getElementById("app");
     const signupForm = document.getElementById("signup-form");
     const loginForm = document.getElementById("login-form");
     const authStatus = document.getElementById("auth-status");
+    const toggleAuth = document.getElementById("toggle-auth");
 
     function authMsg(msg, ok=false) {
       authStatus.textContent = msg;
       authStatus.style.color = ok ? "#2563eb" : "#dc2626";
     }
 
-    // Duba idan user shine admin (Zaka iya sa email dinka na admin a nan)
-    const ADMIN_EMAILS = ["admin@arewadataplug.com", "hashimu@arewadataplug.com"];
+    const ADMIN_EMAILS = ["hashimualiyu791@gmail.com"];
 
     async function showApp(user) {
       authWrap.style.display = "none";
       app.style.display = "block";
       document.getElementById("welcomeName").textContent = user.user_metadata?.full_name || user.email.split('@')[0];
       
-      // Duba ko Admin ne
       if (ADMIN_EMAILS.includes(user.email)) {
         document.getElementById("role-badge").textContent = "ADMIN";
-        document.getElementById("role-badge").className = "text-[10px] font-bold bg-amber-100 text-amber-700 px-2.5 py-1 rounded-full uppercase";
+        document.getElementById("role-badgeclassName" = "text-[10px] font-bold bg-amber-100 text-amber-700 px-2.5 py-1 rounded-full uppercase");
         document.getElementById("nav-admin-btn").style.display = "flex";
-        loadAdminStats();
       }
-
       fetchRealWallet(user.id);
     }
 
@@ -300,32 +244,15 @@
       if(!supabaseClient) return;
       const { data } = await supabaseClient.from("wallets").select("balance").eq("user_id", userId).maybeSingle();
       document.getElementById("home-balance").textContent = "₦" + Number(data?.balance || 0).toLocaleString("en-NG", {minimumFractionDigits:2});
-      document.getElementById("moniepoint-acc").textContent = "0123456789"; // Zai zo daga database API daga baya
-    }
-
-    async function loadAdminStats() {
-      // Aikin Admin: Zai iya lissafta masu amfani da mu'amala daga database
-      document.getElementById("admin-total-users").textContent = "12";
-      document.getElementById("admin-total-tx").textContent = "₦45,200";
-    }
-
-    function adminAction(action) {
-      const out = document.getElementById("admin-output");
-      if(action === 'sync_prices') {
-        out.textContent = "✔ VTU API prices synchronized successfully from provider!";
-      } else {
-        out.textContent = "✔ User database fetched securely.";
-      }
+      document.getElementById("moniepoint-acc").textContent = "0123456789";
     }
 
     signupForm.addEventListener("submit", async (e) => {
       e.preventDefault();
-      if(!supabaseClient) return alert("Ka tabbata ka sanya ainihin Supabase API Keys a cikin code din!");
       authMsg("Creating account...", true);
       const email = document.getElementById("signup-email").value;
       const password = document.getElementById("signup-password").value;
       const full_name = document.getElementById("signup-name").value;
-      
       const { data, error } = await supabaseClient.auth.signUp({ email, password, options: { data: { full_name } } });
       if(error) return authMsg(error.message);
       if(data.session) showApp(data.session.user);
@@ -334,11 +261,9 @@
 
     loginForm.addEventListener("submit", async (e) => {
       e.preventDefault();
-      if(!supabaseClient) return alert("Ka tabbata ka sanya ainihin Supabase API Keys a cikin code din!");
       authMsg("Signing in...", true);
       const email = document.getElementById("login-email").value;
       const password = document.getElementById("login-password").value;
-      
       const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
       if(error) return authMsg(error.message);
       showApp(data.user);
@@ -350,11 +275,14 @@
       app.style.display = "none";
     });
 
-    document.getElementById("toggle-auth").addEventListener("click", () => {
-      const isSignup = signupForm.style.display !== "none";
-      signupForm.style.display = isSignup ? "none" : "block";
-      loginForm.style.display = isSignup ? "block" : "none";
-      document.getElementById("auth-title").textContent = isSignup ? "Login" : "Create Account / Rijista";
+    // Gyara maɓallin Toggle tsakanin Login da Register
+    toggleAuth.addEventListener("click", () => {
+      const isSignupVisible = signupForm.style.display !== "none";
+      signupForm.style.display = isSignupVisible ? "none" : "block";
+      loginForm.style.display = isSignupVisible ? "block" : "none";
+      document.getElementById("auth-title").textContent = isSignupVisible ? "Login / Shiga" : "Create Account / Rijista";
+      toggleAuth.textContent = isSignupVisible ? "Don't have an account? Register" : "Already registered? Login";
+      authMsg("");
     });
 
     const pages = document.querySelectorAll(".page");
@@ -371,13 +299,9 @@
         <div class="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm mt-3 space-y-3">
           <h4 class="text-xs font-bold uppercase text-blue-600">${type.toUpperCase()} Purchase</h4>
           <input type="tel" placeholder="Phone Number" class="w-full px-3 py-2 border rounded-xl text-xs">
-          <button onclick="alert('API Integration required to complete transaction.')" class="w-full py-2.5 bg-blue-600 text-white font-bold rounded-xl text-xs">Execute ${type}</button>
+          <button onclick="alert('API integration required.')" class="w-full py-2.5 bg-blue-600 text-white font-bold rounded-xl text-xs">Execute ${type}</button>
         </div>
       `;
-    }
-
-    function initiateRealPayment() {
-      alert("Aikin Monnify/Paystack API zai fara aiki da zaran ka haɗa Supabase Edge Functions da Secret Keys ɗinka.");
     }
   </script>
 </body>
